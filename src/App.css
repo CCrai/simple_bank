@@ -3,3 +3,10 @@
   display: flex;
   justify-content: center;
 }
+
+.logout-button {
+  position: fixed;
+  margin-top: 0;
+  top: 20px;
+  right: 10px;
+}

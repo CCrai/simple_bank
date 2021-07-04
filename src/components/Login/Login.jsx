@@ -2,14 +2,21 @@ import React from 'react';
 import './Login.css';
 import { login } from '../../services/LoginMockService';
 
+// Importación del contexto global
+import { StateContext } from '../../context/StateProvider';
+
 function Login() {
     const [user, setUser] = React.useState('');
     const [pass, setPass] = React.useState('');
 
+    // Context Hook
+    const { userIsLogged, setUserIsLogged } = React.useContext(StateContext);
+
     const validateDataAndLogin = (event) => {
         event.preventDefault();
         console.log(user, pass);
-        login();
+        let isLogged = login();
+        setUserIsLogged(isLogged);
         /**
          * <ToDo>
          * Validar los datos y obtener
