@@ -14,8 +14,8 @@ function Login() {
 
     const validateDataAndLogin = (event) => {
         event.preventDefault();
-        console.log(user, pass);
-        let isLogged = login();
+
+        let isLogged = login(user, pass);
         setUserIsLogged(isLogged);
         /**
          * <ToDo>
@@ -29,8 +29,8 @@ function Login() {
 
     return (
         <div className="container">
+            <h2>Login</h2>
             <form className="login-container" onSubmit={validateDataAndLogin}>
-                <h2>Login</h2>
                 <label>Usuario</label>
                 <input
                     type="text"

@@ -9,3 +9,7 @@
 .transfers-container label, button {
     margin-top: 20px;
 }
+
+.transfers-container select, input, textarea {
+    width: 200px;
+}

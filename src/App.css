@@ -2,6 +2,7 @@
   padding: 0 20%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .logout-button {
@@ -9,4 +10,8 @@
   margin-top: 0;
   top: 20px;
   right: 10px;
+}
+
+h2 {
+  text-align: center;
 }

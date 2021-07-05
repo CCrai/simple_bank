@@ -21,8 +21,8 @@ function Transfers(props) {
 
     return (
         <div className="container">
+            <h2>Transferencias bancarias</h2>
             <form className="transfers-container">
-                <h2>Transferencias bancarias</h2>
                 <label>Cuenta de origen</label>
                 <select
                     onChange={(e) => setRootAccount(e.target.value)}
@@ -50,7 +50,7 @@ function Transfers(props) {
                     onChange={(e) => setReference(e.target.value)}
                     value={reference}
                 ></textarea>
-                <button>Ingresar</button>
+                <button>Enviar transferencia</button>
             </form>
             <button
                 className="logout-button"

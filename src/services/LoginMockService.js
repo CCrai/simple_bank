@@ -1,7 +1,7 @@
 const users = {
-    antonio: {
+    gabriela: {
         password: '123456',
-        name: 'Antonio',
+        name: 'Gabriela',
         surname: 'Méndez',
         accounts: [
             {
@@ -43,9 +43,9 @@ const users = {
             }
         ],
     },
-    pedro: {
+    patricia: {
         password: '789123',
-        name: 'Pedro',
+        name: 'Patricia',
         surname: 'Fernández',
         accounts: [
             {
@@ -67,9 +67,13 @@ const users = {
     }
 }
 
-function login() {
-    console.log(users.claudio);
-    return true;
+function login(user, password) {
+    if (users[user] && password === users[user].password) {
+        return users[user];
+    }
+    else {
+        return false;
+    }
     /**
      * <ToDo>
      * Validar usuario utilizando
