@@ -2,6 +2,7 @@ import React from 'react';
 // ToDo: Cambiar por otro Favicon
 import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav/Nav';
 import Login from './components/Login/Login';
 import Transfers from './components/Transfers/Transfers';
 
@@ -9,11 +10,12 @@ import Transfers from './components/Transfers/Transfers';
 import { StateContext } from './context/StateProvider';
 
 function App() {
-  const { userIsLogged, setUserIsLogged } = React.useContext(StateContext);
+  const { userLogged, setUserLogged } = React.useContext(StateContext);
 
   return (
     <div className="App">
-      {userIsLogged ?
+      <Nav></Nav>
+      {userLogged ?
         <Transfers /> : <Login />
       }
     </div>
