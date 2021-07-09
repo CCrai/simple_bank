@@ -4,6 +4,7 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-color: aqua;
 }
 
 .transfers-container label, button {
@@ -12,4 +13,13 @@
 
 .transfers-container select, input, textarea {
     width: 200px;
+}
+
+.radio-button-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.radio-button-container input {
+    width: 40px;
 }

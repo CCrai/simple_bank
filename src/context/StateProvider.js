@@ -3,11 +3,11 @@ import React from 'react';
 export const StateContext = React.createContext();
 
 const StateProvider = (props) => {
-    const [userIsLogged, setUserIsLogged] = React.useState(false);
+    const [userLogged, setUserLogged] = React.useState(false);
 
     return (
         <StateContext.Provider value={{
-            userIsLogged, setUserIsLogged,
+            userLogged, setUserLogged,
         }}>
             {props.children}
         </StateContext.Provider>

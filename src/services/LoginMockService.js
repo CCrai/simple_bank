@@ -6,20 +6,24 @@ const users = {
         accounts: [
             {
                 accountNumber: '0002547698',
-                currency: 'Pesos uruguayos',
+                currencyId: 'UYU',
+                currencyDescription: 'Pesos uruguayos',
                 funds: 100000
             },
             {
                 accountNumber: '0002547698',
-                currency: 'Dólares',
+                currencyId: 'USD',
+                currencyDescription: 'Dólares',
                 funds: 3490
             },
             {
                 accountNumber: '0002547698',
-                currency: 'Euro',
+                currencyId: 'EUR',
+                currencyDescription: 'Euro',
                 funds: 2200
             }
         ],
+        token: "TokenFicticioGabriela",
     },
     adolfo: {
         password: '456789',
@@ -28,20 +32,24 @@ const users = {
         accounts: [
             {
                 accountNumber: '0002476172',
-                currency: 'Pesos uruguayos',
+                currencyId: 'UYU',
+                currencyDescription: 'Pesos uruguayos',
                 funds: 70000
             },
             {
                 accountNumber: '0002476172',
-                currency: 'Dólares',
+                currencyId: 'USD',
+                currencyDescription: 'Dólares',
                 funds: 5100
             },
             {
                 accountNumber: '0002476172',
-                currency: 'Euro',
+                currencyId: 'EUR',
+                currencyDescription: 'Euro',
                 funds: 1200
             }
         ],
+        token: "TokenFicticioAdolfo",
     },
     patricia: {
         password: '789123',
@@ -50,20 +58,24 @@ const users = {
         accounts: [
             {
                 accountNumber: '0002123659',
-                currency: 'Pesos uruguayos',
+                currencyId: 'UYU',
+                currencyDescription: 'Pesos uruguayos',
                 funds: 120000
             },
             {
                 accountNumber: '0002123659',
-                currency: 'Dólares',
+                currencyId: 'USD',
+                currencyDescription: 'Dólares',
                 funds: 990
             },
             {
                 accountNumber: '0002123659',
-                currency: 'Euro',
+                currencyId: 'EUR',
+                currencyDescription: 'Euro',
                 funds: 12400
             }
         ],
+        token: "TokenFicticioPatricia",
     }
 }
 

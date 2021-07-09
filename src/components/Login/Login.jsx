@@ -10,13 +10,13 @@ function Login() {
     const [pass, setPass] = React.useState('');
 
     // Context Hook
-    const { userIsLogged, setUserIsLogged } = React.useContext(StateContext);
+    const { userLogged, setUserLogged } = React.useContext(StateContext);
 
     const validateDataAndLogin = (event) => {
         event.preventDefault();
 
         let isLogged = login(user, pass);
-        setUserIsLogged(isLogged);
+        setUserLogged(isLogged);
         /**
          * <ToDo>
          * Validar los datos y obtener
@@ -37,6 +37,7 @@ function Login() {
                     onChange={(e) => setUser(e.target.value)}
                     value={user}
                 ></input>
+                
                 <label>Contraseña</label>
                 <input
                     type="password"
