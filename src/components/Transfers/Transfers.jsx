@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transfers.css';
 import { convertAmount } from '../../services/ArbitrationService';
-import { setFunds } from '../../services/QueriesService';
+import { setFunds, getUser } from '../../services/QueriesService';
 
 // Importación del contexto global
 import { StateContext } from '../../context/StateProvider';
@@ -17,15 +17,6 @@ function Transfers(props) {
 	const [ reference, setReference ] = React.useState('');
 	const [ confirm, setConfirm ] = React.useState(false);
 
-	const sendTransfer = (event) => {
-        let rootCurrency = rootAccount.split('-')[0];
-        let account = rootAccount.split('-')[1];
-        setFunds(rootCurrency, account, '-', amount);
-
-		let amountToTransfer = convertAmount(rootAccount, currency, amount);
-        setFunds(currency, destinationAccount, '+', amountToTransfer);
-	};
-
 	const validateDataAndGoToNextStep = (event) => {
 		event.preventDefault();
 
@@ -34,6 +25,18 @@ function Transfers(props) {
 		} else {
 			setConfirm(true);
 		}
+	};
+
+    const sendTransfer = (event) => {
+        let rootCurrency = rootAccount.split('-')[0];
+        let account = rootAccount.split('-')[1];
+        setFunds(rootCurrency, account, '-', amount);
+
+		let amountToTransfer = convertAmount(rootAccount, currency, amount);
+        setFunds(currency, destinationAccount, '+', amountToTransfer);
+
+        let updatedUser = JSON.parse(JSON.stringify(getUser(userLogged.id)));
+        setUserLogged(updatedUser);
 	};
 
 	return (

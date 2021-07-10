@@ -1,6 +1,7 @@
 // Las cuentas son identificadas por la moneda + el número de cuenta
 const users = {
     gabriela: {
+        id: 'gabriela',
         password: '123456',
         name: 'Gabriela',
         surname: 'Méndez',
@@ -27,6 +28,7 @@ const users = {
         token: "TokenFicticioGabriela",
     },
     adolfo: {
+        id: 'adolfo',
         password: '456789',
         name: 'Adolfo',
         surname: 'Rodríguez',
@@ -53,6 +55,7 @@ const users = {
         token: "TokenFicticioAdolfo",
     },
     patricia: {
+        id: 'patricia',
         password: '789123',
         name: 'Patricia',
         surname: 'Fernández',

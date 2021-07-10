@@ -9,6 +9,20 @@ h2 {
   text-align: center;
 }
 
+.accounts-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.accounts-container div {
+  margin: 30px;
+}
+
+.amount-account {
+  font-weight: 800;
+}
+
 /* Elimina los botones del input numérico */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

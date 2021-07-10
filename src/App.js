@@ -16,7 +16,24 @@ function App() {
     <div className="App">
       <Nav></Nav>
       {userLogged ?
-        <Transfers /> : <Login />
+        <div>
+          <Transfers />
+          <div className="accounts-container">
+            {userLogged.accounts.map((account) => {
+              return (
+                <div>
+                  <span>
+                    {account.accountNumber + ' - ' + account.currencyDescription}
+                  </span>
+                  <br></br>
+                  <span className="amount-account">
+                    {account.currencyId + ' - ' + account.funds}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div> : <Login />
       }
     </div>
   );

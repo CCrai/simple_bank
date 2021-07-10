@@ -1,18 +1,18 @@
 import { users } from './Data.js';
 
 function setFunds(currency, destinationAccount, addOrSubtract, amount) {
-    amount = parseInt(amount);
-    
+    amount = parseFloat(amount);
+
     let keys = Object.keys(users);
     for (let i = 0; i < keys.length; i++) {
         let key = keys[i];
         let user = users[key];
 
-        searchAccountAndSetFunds(user, destinationAccount, currency, addOrSubtract, amount);
+        _searchAccountAndSetFunds(user, destinationAccount, currency, addOrSubtract, amount);
     }
 }
 
-function searchAccountAndSetFunds(user, destinationAccount, currency, addOrSubtract, amount) {
+function _searchAccountAndSetFunds(user, destinationAccount, currency, addOrSubtract, amount) {
     for (let i = 0; i < user.accounts.length; i++) {
         let currencyId = user.accounts[i].currencyId;
         let accountNumber = user.accounts[i].accountNumber;
@@ -32,4 +32,8 @@ function searchAccountAndSetFunds(user, destinationAccount, currency, addOrSubtr
     }
 }
 
-export { setFunds };
+function getUser(user) {
+    return users[user];
+}
+
+export { setFunds, getUser };
