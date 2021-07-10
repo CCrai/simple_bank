@@ -4,7 +4,10 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: white;
+    color: gray;
+    padding: 40px 0 70px;
+    width: 450px;
 }
 
 .transfers-container label, button {
@@ -22,4 +25,12 @@
 
 .radio-button-container input {
     width: 40px;
+    height: 20px;
+}
+
+.transfers-container textarea {
+    background-color: gainsboro;
+    border-radius: 5px;
+    width: 250px;
+    height: 200px;
 }

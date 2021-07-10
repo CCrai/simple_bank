@@ -4,6 +4,10 @@
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    color: gray;
+    padding: 50px 0 80px;
+    width: 400px;
 }
 
 .login-container label, button {

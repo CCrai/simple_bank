@@ -14,9 +14,9 @@ function App() {
 
   return (
     <div className="App">
-      <Nav></Nav>
       {userLogged ?
         <div>
+          <Nav></Nav>
           <Transfers />
           <div className="accounts-container">
             {userLogged.accounts.map((account) => {

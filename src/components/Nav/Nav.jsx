@@ -6,18 +6,24 @@ import { logout } from '../../services/LoginMockService';
 import { StateContext } from '../../context/StateProvider';
 
 function Login() {
-    // Context Hook
+	// Context Hook
 	const { userLogged, setUserLogged } = React.useContext(StateContext);
 
-    const logoutToMain = () => {
-        let isLogged = logout();
-        setUserLogged(isLogged);
-    };
+	const logoutToMain = () => {
+		let isLogged = logout();
+		setUserLogged(isLogged);
+	};
 
 	return (
-		<button className="logout-button" onClick={logoutToMain}>
-			Logout
-		</button>
+		<div className="nav-container">
+			<div className="nav">
+				<span>{'Bienvenido ' + userLogged.name}</span>
+				<h1>Bank</h1>
+				<button className="logout-button" onClick={logoutToMain}>
+					Logout
+				</button>
+			</div>
+		</div>
 	);
 }
 

@@ -1,8 +1,14 @@
+body {
+  background-color: #d81e05;
+  color: white;
+}
+
 .container {
   padding: 0 20%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 h2 {
@@ -21,6 +27,29 @@ h2 {
 
 .amount-account {
   font-weight: 800;
+}
+
+button {
+  cursor: pointer;
+  min-width: 150px;
+  min-height: 40px;
+  border-radius: 5px;
+  background-color: #d81e05;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase ;
+}
+
+select {
+  background-color: gainsboro;
+  height: 35px;
+  border-radius: 5px;
+}
+
+input {
+  height: 30px;
+  background-color: gainsboro;
+  border-radius: 5px;
 }
 
 /* Elimina los botones del input numérico */
