@@ -17,14 +17,6 @@ function Login() {
 
         let isLogged = login(user, pass);
         setUserLogged(isLogged);
-        /**
-         * <ToDo>
-         * Validar los datos y obtener
-         * la informacion del usuario
-         * utilizando el servicio mock
-         * con su funcion login()
-         * </ToDo>
-         */
     }
 
     return (
@@ -37,7 +29,7 @@ function Login() {
                     onChange={(e) => setUser(e.target.value)}
                     value={user}
                 ></input>
-                
+
                 <label>Contraseña</label>
                 <input
                     type="password"
