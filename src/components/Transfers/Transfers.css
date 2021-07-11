@@ -8,14 +8,20 @@
     color: gray;
     padding: 40px 0 70px;
     width: 450px;
+    border-radius: 3px;
 }
 
 .transfers-container label, button {
     margin-top: 20px;
 }
 
-.transfers-container select, input, textarea {
-    width: 200px;
+.transfers-container input, textarea {
+    width: 220px;
+}
+
+.transfers-container select {
+    width: 245px;
+    height: 40px;
 }
 
 .radio-button-container {
@@ -29,8 +35,8 @@
 }
 
 .transfers-container textarea {
-    background-color: gainsboro;
+    padding: 0 10px;
     border-radius: 5px;
-    width: 250px;
+    width: 220px;
     height: 200px;
 }

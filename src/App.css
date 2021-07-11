@@ -33,23 +33,37 @@ button {
   cursor: pointer;
   min-width: 150px;
   min-height: 40px;
-  border-radius: 5px;
+  border-radius: 3px;
   background-color: #d81e05;
   color: white;
   font-weight: 900;
-  text-transform: uppercase ;
+  text-transform: uppercase;
+  border: none;
+}
+
+button:hover {
+  background-color: #b41a05;
 }
 
 select {
-  background-color: gainsboro;
+  padding: 0 10px;
+  background-color: #eeeeee;
   height: 35px;
-  border-radius: 5px;
+  border-radius: 3px;
+  border: solid 1px gainsboro;
 }
 
 input {
-  height: 30px;
-  background-color: gainsboro;
-  border-radius: 5px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #eeeeee;
+  border-radius: 3px;
+  border: solid 1px gainsboro;
+}
+
+textarea {
+  background-color: #eeeeee;
+  border: solid 1px gainsboro;
 }
 
 /* Elimina los botones del input numérico */

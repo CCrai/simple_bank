@@ -8,6 +8,7 @@
     color: gray;
     padding: 50px 0 80px;
     width: 400px;
+    border-radius: 3px;
 }
 
 .login-container label, button {
