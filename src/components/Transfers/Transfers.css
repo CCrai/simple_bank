@@ -15,7 +15,7 @@
     margin-top: 20px;
 }
 
-.transfers-container input, textarea {
+.transfers-container input {
     width: 220px;
 }
 
@@ -51,4 +51,43 @@
     width: 240px;
     text-align: start;
     font-size: 12px;
+}
+
+@media (max-width: 450px) {
+    .transfers-container {
+      width: 150px;
+    }
+
+    .transfers-container input, textarea {
+        width: 150px;
+    }
+    
+    .transfers-container select {
+        width: 175px;
+    }
+
+    .radio-button-container {
+        align-items: center;
+    }
+
+    .transfers-container textarea {
+        width: 150px;
+    }
+
+    .radio-button-container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .radio-button-container label {
+        margin: 5px 0 15px;
+    }
+
+    .buttons-transfers-container {
+        flex-direction: column;
+    }
+
+    .amount-and-arbitration-span {
+        width: 175px;
+    }
 }

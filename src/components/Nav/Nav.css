@@ -19,6 +19,24 @@
     top: 20px;
     right: 10px;
     border-radius: 50px;
-    width: 50px;
-    height: 50px;
+}
+
+@media (max-width: 480px) {
+    .nav {
+        margin-top: -30px;
+        padding-top: 60px;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .company-title {
+        display: none;
+    }
+
+    .logout-button {
+        min-width: 50px;
+        min-height: 50px;
+        font-size: 12px;
+    }
 }

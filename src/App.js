@@ -1,6 +1,4 @@
 import React from 'react';
-// ToDo: Cambiar por otro Favicon
-import logo from './logo.svg';
 import './App.css';
 import Nav from './components/Nav/Nav';
 import Login from './components/Login/Login';

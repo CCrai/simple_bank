@@ -47,7 +47,6 @@ function Transfers(props) {
 		}
 
 		let ownerDestinationAccount = searchAccountOwner(currency, destinationAccount);
-		console.log(userLogged, ownerDestinationAccount);
 		if (userLogged.id === ownerDestinationAccount.user.id) {
 			window.alert('No está permitido realizar transacciones entre tus cuentas. Sólo puedes hacerlo a cuentas de terceros.');
 			return;

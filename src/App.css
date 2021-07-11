@@ -72,3 +72,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+@media (max-width: 450px) {
+  .accounts-container {
+    flex-direction: column;
+  }
+
+  .accounts-container div {
+    margin: 10px 0;
+  }
+}
