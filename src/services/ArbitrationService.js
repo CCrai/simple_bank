@@ -24,7 +24,7 @@ function convertAmount(rootAccount, destinationCurrency, amount) {
         }
         
         if (rootCurrency === 'UYU') {
-            return amount / cotization[rootCurrency];
+            return amount / cotization[destinationCurrency];
         }
         
         return amount * cotization[rootCurrency];

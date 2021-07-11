@@ -17,6 +17,10 @@ function Login() {
 
         let isLogged = login(user, pass);
         setUserLogged(isLogged);
+
+        if (!isLogged) {
+            window.alert('El usuario o la contraseña no son válidos. Intente nuevamente.');
+        }
     }
 
     return (

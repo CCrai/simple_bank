@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transfers.css';
 import { convertAmount, arbitrationUsd, arbitrationEur, cotization } from '../../services/ArbitrationService';
-import { setFunds, getUser, searchAccount } from '../../services/QueriesService';
+import { setFunds, getUser, searchAccount, searchAccountOwner } from '../../services/QueriesService';
 
 // Importación del contexto global
 import { StateContext } from '../../context/StateProvider';
@@ -21,14 +21,42 @@ function Transfers(props) {
 	const validateDataAndGoToNextStep = (event) => {
 		event.preventDefault();
 
-		if (rootAccount === '' || destinationAccount === '' || amount < 1 || reference === '') {
-			window.alert('Te han quedado algunos datos sin llenar o incorrectos. Revísalos y vuelve a intentar.');
-		} else {
-			setConfirm(true);
+		if (rootAccount === '') {
+			window.alert('No has elegido la cuenta origen.');
+			return;
 		}
+
+		if (destinationAccount === '') {
+			window.alert('No has elegido la cuenta destino.');
+			return;
+		}
+
+		if (destinationAccount < 0) {
+			window.alert('Número de cuenta incorrecto.');
+			return;
+		}
+
+		if (amount < 1) {
+			window.alert('El importe a transferir no puede ser 0 ni negativo.');
+			return;
+		}
+
+		if (reference === '') {
+			window.alert('Es necesario ingresar una referencia.');
+			return;
+		}
+
+		let ownerDestinationAccount = searchAccountOwner(currency, destinationAccount);
+		console.log(userLogged, ownerDestinationAccount);
+		if (userLogged.id === ownerDestinationAccount.user.id) {
+			window.alert('No está permitido realizar transacciones entre tus cuentas. Sólo puedes hacerlo a cuentas de terceros.');
+			return;
+		}
+
+		setConfirm(true);
 	};
 
-	const sendTransfer = (event) => {
+	const sendTransfer = () => {
 		let auxDestinationAccount = searchAccount(currency, destinationAccount);
 
 		if (auxDestinationAccount) {

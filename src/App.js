@@ -19,9 +19,9 @@ function App() {
           <Nav></Nav>
           <Transfers />
           <div className="accounts-container">
-            {userLogged.accounts.map((account) => {
+            {userLogged.accounts.map((account, index) => {
               return (
-                <div>
+                <div key={index}>
                   <span>
                     {account.accountNumber + ' - ' + account.currencyDescription}
                   </span>

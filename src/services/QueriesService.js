@@ -1,5 +1,20 @@
 import { users } from './Data.js';
 
+function searchAccountOwner(currency, destinationAccount) {
+    let keys = Object.keys(users);
+    for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        let user = users[key];
+
+        let account = _searchAccountInUsers(user, destinationAccount, currency);
+        if (account) {
+            return {user};
+        }
+    }
+
+    return false;
+}
+
 function searchAccount(currency, destinationAccount) {
     let keys = Object.keys(users);
     for (let i = 0; i < keys.length; i++) {
@@ -50,4 +65,4 @@ function getUser(user) {
     return users[user];
 }
 
-export { setFunds, getUser, searchAccount };
+export { setFunds, getUser, searchAccount, searchAccountOwner };
