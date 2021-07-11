@@ -29,6 +29,8 @@ function _searchAccountInUsers(user, destinationAccount, currency) {
 }
 
 function setFunds(destinationAccount, addOrSubtract, amount) {
+    amount = parseFloat(amount);
+
     if (addOrSubtract === '+') {
         destinationAccount.funds = destinationAccount.funds + amount;
         return true;

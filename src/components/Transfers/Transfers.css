@@ -46,3 +46,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+.amount-and-arbitration-span {
+    width: 240px;
+    text-align: start;
+    font-size: 12px;
+}

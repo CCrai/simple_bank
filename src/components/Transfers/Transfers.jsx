@@ -1,6 +1,6 @@
 import React from 'react';
 import './Transfers.css';
-import { convertAmount } from '../../services/ArbitrationService';
+import { convertAmount, arbitrationUsd, arbitrationEur, cotization } from '../../services/ArbitrationService';
 import { setFunds, getUser, searchAccount } from '../../services/QueriesService';
 
 // Importación del contexto global
@@ -63,6 +63,36 @@ function Transfers(props) {
 		setReference('');
 		setConfirm(false);
 		setTransferComplete(false);
+	};
+
+	const showCotizationOrArbitration = () => {
+		if (rootAccount.split('-')[0] === currency) {
+			return '';
+		}
+
+		let transferWithUsdAndUyu =
+			(rootAccount.split('-')[0] === 'UYU' && currency === 'USD') ||
+			(rootAccount.split('-')[0] === 'USD' && currency === 'UYU');
+		if (transferWithUsdAndUyu) {
+			return 'Cotización: UYU ' + cotization.USD;
+		}
+
+		let transferWithEurAndUyu =
+			(rootAccount.split('-')[0] === 'UYU' && currency === 'EUR') ||
+			(rootAccount.split('-')[0] === 'EUR' && currency === 'UYU');
+		if (transferWithEurAndUyu) {
+			return 'Cotización: UYU ' + cotization.EUR;
+		}
+
+		let transferFromUsdToEur = rootAccount.split('-')[0] === 'USD' && currency === 'EUR';
+		if (transferFromUsdToEur) {
+			return 'Arbitraje: ' + arbitrationUsd.USD + ' USD = ' + arbitrationUsd.EUR + ' EUR';
+		}
+
+		let transferFromEurToUsd = rootAccount.split('-')[0] === 'EUR' && currency === 'USD';
+		if (transferFromEurToUsd) {
+			return 'Arbitraje: ' + arbitrationEur.EUR + ' EUR = ' + arbitrationEur.USD + ' USD';
+		}
 	};
 
 	return (
@@ -143,13 +173,20 @@ function Transfers(props) {
 						<label htmlFor="EUR">Euros</label>
 					</div>
 
-					<label>Monto a transferir</label>
-					<input
-						type="number"
-						onChange={(e) => setAmount(e.target.value)}
-						value={amount}
-						disabled={confirm}
-					/>
+					<label>{'Monto a transferir en ' + rootAccount.split('-')[0]}</label>
+					<div>
+						<input
+							type="number"
+							onChange={(e) => setAmount(e.target.value)}
+							value={amount}
+							disabled={confirm}
+						/>
+					</div>
+					<span className="amount-and-arbitration-span">La cuenta destino recibirá:</span>
+					<span className="amount-and-arbitration-span">
+						{currency + ' ' + convertAmount(rootAccount, currency, amount)}
+					</span>
+					<span className="amount-and-arbitration-span">{showCotizationOrArbitration()}</span>
 
 					<label>Referencia del movimiento</label>
 					<textarea
