@@ -6,8 +6,8 @@
     align-items: center;
     background-color: white;
     color: gray;
-    padding: 40px 0 70px;
-    width: 450px;
+    padding: 40px 50px 70px;
+    width: 350px;
     border-radius: 3px;
 }
 
@@ -39,4 +39,10 @@
     border-radius: 5px;
     width: 220px;
     height: 200px;
+}
+
+.buttons-transfers-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }

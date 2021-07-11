@@ -5,6 +5,7 @@ const users = {
         password: '123456',
         name: 'Gabriela',
         surname: 'Méndez',
+        gender: 'Femenino',
         accounts: [
             {
                 accountNumber: '0002547698',
@@ -32,6 +33,7 @@ const users = {
         password: '456789',
         name: 'Adolfo',
         surname: 'Rodríguez',
+        gender: 'Masculino',
         accounts: [
             {
                 accountNumber: '0002476172',
@@ -59,6 +61,7 @@ const users = {
         password: '789123',
         name: 'Patricia',
         surname: 'Fernández',
+        gender: 'Femenino',
         accounts: [
             {
                 accountNumber: '0002123659',

@@ -17,7 +17,7 @@ function Login() {
 	return (
 		<div className="nav-container">
 			<div className="nav">
-				<span>{'Bienvenido ' + userLogged.name}</span>
+				<span>{ userLogged.gender === 'Femenino' ? 'Bienvenida ' + userLogged.name : 'Bienvenido ' + userLogged.name}</span>
 				<h1>Bank</h1>
 				<button className="logout-button" onClick={logoutToMain}>
 					Logout
