@@ -1,7 +1,7 @@
 import React from 'react';
 import './Transfers.css';
 import { convertAmount } from '../../services/ArbitrationService';
-import { setFunds, getUser } from '../../services/QueriesService';
+import { setFunds, getUser, searchAccount } from '../../services/QueriesService';
 
 // Importación del contexto global
 import { StateContext } from '../../context/StateProvider';
@@ -27,16 +27,29 @@ function Transfers(props) {
 		}
 	};
 
-    const sendTransfer = (event) => {
-        let rootCurrency = rootAccount.split('-')[0];
-        let account = rootAccount.split('-')[1];
-        setFunds(rootCurrency, account, '-', amount);
+	const sendTransfer = (event) => {
+		let auxDestinationAccount = searchAccount(currency, destinationAccount);
 
-		let amountToTransfer = convertAmount(rootAccount, currency, amount);
-        setFunds(currency, destinationAccount, '+', amountToTransfer);
+		if (auxDestinationAccount) {
+			let rootCurrency = rootAccount.split('-')[0];
+			let account = rootAccount.split('-')[1];
 
-        let updatedUser = JSON.parse(JSON.stringify(getUser(userLogged.id)));
-        setUserLogged(updatedUser);
+			let auxRootAccount = searchAccount(rootCurrency, account);
+			// Restamos el importe de la cuenta origen
+			let success = setFunds(auxRootAccount, '-', amount);
+
+			if (success) {
+				let amountToTransfer = convertAmount(rootAccount, currency, amount);
+				setFunds(auxDestinationAccount, '+', amountToTransfer);
+
+				let updatedUser = JSON.parse(JSON.stringify(getUser(userLogged.id)));
+				setUserLogged(updatedUser);
+			} else {
+				window.alert('No tienes fondos suficientes para realizar esta transferencia');
+			}
+		} else {
+			window.alert('La cuenta ingresada no existe');
+		}
 	};
 
 	return (
@@ -115,7 +128,7 @@ function Transfers(props) {
 				{confirm ? (
 					<div>
 						<button onClick={() => setConfirm(false)}>Atrás</button>
-						<button onClick={sendTransfer}>Confirmar transferencia</button>
+						<button onClick={sendTransfer}>Confirmar</button>
 					</div>
 				) : (
 					<button>Enviar transferencia</button>
