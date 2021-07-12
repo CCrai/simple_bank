@@ -15,6 +15,7 @@ const arbitrationEur = {
 }
 
 function convertAmount(rootAccount, destinationCurrency, amount) {
+    amount = amount === '' ? 0 : parseFloat(amount);
     let rootCurrency = rootAccount.split('-')[0];
 
     // Manejo de cuentas en Pesos Uruguayos (UYU)

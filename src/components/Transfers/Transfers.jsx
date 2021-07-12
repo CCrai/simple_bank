@@ -48,7 +48,9 @@ function Transfers(props) {
 
 		let ownerDestinationAccount = searchAccountOwner(currency, destinationAccount);
 		if (userLogged.id === ownerDestinationAccount.user.id) {
-			window.alert('No está permitido realizar transacciones entre tus cuentas. Sólo puedes hacerlo a cuentas de terceros.');
+			window.alert(
+				'No está permitido realizar transacciones entre tus cuentas. Sólo puedes hacerlo a cuentas de terceros.'
+			);
 			return;
 		}
 
@@ -67,7 +69,7 @@ function Transfers(props) {
 			let success = setFunds(auxRootAccount, '-', amount);
 
 			if (success) {
-				let amountToTransfer = convertAmount(rootAccount, currency, amount);
+				let amountToTransfer = convertAmount(rootAccount, currency, amount).toFixed(2);
 				setFunds(auxDestinationAccount, '+', amountToTransfer);
 
 				let updatedUser = JSON.parse(JSON.stringify(getUser(userLogged.id)));
@@ -211,7 +213,11 @@ function Transfers(props) {
 					</div>
 					<span className="amount-and-arbitration-span">La cuenta destino recibirá:</span>
 					<span className="amount-and-arbitration-span">
-						{currency + ' ' + convertAmount(rootAccount, currency, amount)}
+						{rootAccount === '' ? (
+							''
+						) : (
+							currency + ' ' + convertAmount(rootAccount, currency, amount).toFixed(2)
+						)}
 					</span>
 					<span className="amount-and-arbitration-span">{showCotizationOrArbitration()}</span>
 
