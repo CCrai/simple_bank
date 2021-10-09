@@ -1,3 +1,60 @@
+### USUARIOS PARA PROBAR LA APLICACIÓN ##
+
+Se puede utilizar los siguientes usuarios que están creados como objetos en un archivo llamado Data.js:
+
+usuario: gabriela
+contraseña: 123456
+
+usuario: adolfo
+contraseña: 456789
+
+usuario: patricia
+contraseña: 789123
+
+Los usuarios mensionados tienen cuentas en pesos, dólares y euros y son las siguientes:
+
+gabriela:
+número: 0002547698
+moneda: UYU
+
+número: 0002547698
+moneda: USD
+
+número: 0002547698
+moneda: EUR
+
+adolfo:
+número: 0002476172
+moneda: UYU
+
+número: 0002476172
+moneda: USD
+
+número: 0002476172
+moneda: EUR
+
+patricia:
+número: 0002123659
+moneda: UYU
+
+número: 0002123659
+moneda: USD
+
+número: 0002123659
+moneda: EUR
+
+#############################################################################################################################################
+
+Comentarios: La aplicación permite realizar transferencias bancarias entre cuentas con las siguientes monedas: Pesos Uruguayos, Dólares y Euros. Al ingresar con usuario y contraseña dirige al usuario hacia un formulario en el que podrá realizar estas transacciones mencionadas.
+
+Limitaciones: Algunas de las limitaciones actuales son las siguientes:
+- La aplicación no permite realizar transferencias a cuentas propias del usuario.
+- La aplicación no permite registrarse a los usuarios, sino que para dar de alta nuevos usuarios hay que hacerlo desde el código javascript.
+- La aplicación no cuenta con una sección para ver los movimientos de la cuenta.
+
+Mejoras a futuro: La mejora más próxima que se puede realizar, es habilitar las transferencias entre cuentas del mismo usuario. Esto ya está disponible programaticamente hablando, pero se limitó debido a la letra de la prueba.
+Se podrían hacer algunas mejoras en cuanto al Nav superior y también en cuanto a la información de las cuentas del usuario pudiendo ver las transacciones realizadas y exportarlas a archivos PDF y xls.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
